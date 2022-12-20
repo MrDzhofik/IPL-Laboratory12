@@ -1,0 +1,24 @@
+<%= image_tag "cot.jpeg", style: "position:fixed; right: 25%" %>
+<div align="left">
+<h1>Посчитали, брат</h1>
+<p>Числа Армстронга:</p>
+<table border=1>
+  <tr>
+    <td>  Индекс </td>
+    <td>  Число  </td>
+  </tr>
+  <% @right_numbers.each do |number| %>
+    <tr>
+      <td> <%= number[0] %> </td>
+      <td> <%= number[1] %> </td>
+    </tr>
+  <% end %>
+</table>
+<p>Количество чисел Армстронга: <%= @right_numbers.length %></p>
+<p><%= @msg %></p>
+</br>
+<%= button_to 'Вернуться', calc_input_url, method: :get, class: 'btn btn-primary' %>
+<%= button_to 'На базу', answers_url, method: :get, class: 'btn btn-primary' %>
+<%= link_to "Выйти", sessions_exit_path %>
+<div>
+

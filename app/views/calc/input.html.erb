@@ -1,0 +1,23 @@
+<% if not User.find_by_id(session[:current_user_id]) %>
+    <%= controller.respond_to do |format| %>
+        <%=   format.html { controller.redirect_to root_path, alert: 'Леее, куда прешь брат без авторизации' } %>
+    <% end %>
+<% end %>
+<p align="center"><strong>Анкара Месси Анкара Месси Анкара Месси Анкара Месси</strong></p>
+<%= image_tag "Messi.jpeg", style: "position:fixed; right: 2%" %>
+<h1>Брат, введи число от 1 до 7.</h1>
+<%= form_tag("/calc/show", :method => :get) do %>
+    <%= label_tag("Введите количество цифр в числе:") %>
+    </br>
+    <%= number_field_tag(:power, nil, in: 1..7, step:1)%>
+    </br>
+    <%= submit_tag("Yosh") %>
+<% end %>
+<%= link_to "Выйти", sessions_exit_path %>
+</br>
+
+
+
+
+
+
