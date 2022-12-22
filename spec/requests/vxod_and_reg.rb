@@ -12,6 +12,7 @@ RSpec.describe 'Authorization and registration test' do
     it 'should reg user' do
         @driver.get('http://localhost:3000/')
         @driver.find_element(:link_text, 'Новый гость').click
+        sleep(1)
         @driver.find_element(:id, 'user_username').send_keys('gav')
         @driver.find_element(:id, 'user_email').send_keys('gav@example.ru')
         @driver.find_element(:id, 'user_password').send_keys('897654')

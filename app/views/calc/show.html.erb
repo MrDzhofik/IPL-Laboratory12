@@ -17,8 +17,11 @@
 <p>Количество чисел Армстронга: <%= @right_numbers.length %></p>
 <p><%= @msg %></p>
 </br>
+<%= link_to "Показать БД в JSON", '/users/json' %>
+</br>
+<%= link_to "Показать БД в XML", '/users/xml' %>
 <%= button_to 'Вернуться', calc_input_url, method: :get, class: 'btn btn-primary' %>
-<%= button_to 'На базу', answers_url, method: :get, class: 'btn btn-primary' %>
+</br>
 <%= link_to "Выйти", sessions_exit_path %>
 <div>
 
